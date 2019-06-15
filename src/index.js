@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ScotchInfoBar from "./ScotchInfoBar";
+import UserDetails from "./components/UserDetails";
 import "./styles.css";
 
 /**
@@ -14,17 +15,16 @@ import users from "./users-data";
  * -----------------------------
  */
 function App() {
+    console.log(users);
+    
   return (
     <div className="App">
       <div className="page-deets">
         <h2>Loop Over an Array of Data</h2>
       </div>
 
-      {/* Iterate over imported array in userData */}
       <div className="users">
-        display data here
-        {/* Display each data in array in a card */}
-        {/* Each card must have a 'key' attribute */}
+          {users.map((user, i) => <UserDetails key={i} user={user} />)}
       </div>
       <ScotchInfoBar />
     </div>
