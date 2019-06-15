@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ScotchInfoBar from './ScotchInfoBar';
+import UserDetails from './components/UserDetails';
 import './styles.css';
 
 const user = {
@@ -18,7 +19,7 @@ function App() {
     return (
       <div className="App">
         <div className="user-deets">
-            {/* show data here */}
+          <UserDetails user={user} />
         </div>
         <ScotchInfoBar />
       </div>
