@@ -1,24 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ScotchInfoBar from './ScotchInfoBar';
-import './styles.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import ScotchInfoBar from "./ScotchInfoBar";
+import "./styles.css";
+
+// Create child Statcard component here
+function StatCard(props) {
+  return;
+  // define component here
+  // define props of icon label and number
+}
 
 function App() {
-    return (
-      <div className="App">
-        <h2>What's the secret phrase?</h2>
-  
-        <input type="text" placeholder="Super duper secret" />
-  
-        <p>
-          Hint: It's <strong>open sesame</strong>
-        </p>
-  
-        <ScotchInfoBar seriesNumber={4} />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <h2>Use components and props in React</h2>
+      {/* Use child component x4 here */}
 
+      <ScotchInfoBar seriesNumber={8} />
+    </div>
+  );
+}
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
