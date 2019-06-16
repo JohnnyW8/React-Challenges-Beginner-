@@ -1,24 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ScotchInfoBar from './ScotchInfoBar';
-import './styles.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import Name from "./NameComponent";
+import Location from "./LocationComponent";
+import UserForm from "./UserForm";
+import ScotchInfoBar from "./ScotchInfoBar";
+import "./styles.css";
 
 function App() {
-    return (
-      <div className="App">
-        <h2>What's the secret phrase?</h2>
-  
-        <input type="text" placeholder="Super duper secret" />
-  
+  return (
+    <div className="App">
+      <h2 className="is-size-4">
+        We'll use the React Context API to pass and receive data in any
+        component.
+      </h2>
+      <div className="container">
+        <UserForm />
+
+        <h2 className="is-size-4">Display User Info Here 👇</h2>
         <p>
-          Hint: It's <strong>open sesame</strong>
+          These two children components will receive data. These could be nested
+          components.
         </p>
-  
-        <ScotchInfoBar seriesNumber={4} />
+        <Name />
+        <Location />
       </div>
-    );
-  }
+      <ScotchInfoBar seriesNumber={9} />
+    </div>
+  );
+}
 
-
-const rootElement = document.getElementById('root');
+// Wrap parent component with context provider
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
