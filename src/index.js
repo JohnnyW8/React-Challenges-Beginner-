@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ScotchInfoBar from './ScotchInfoBar';
 import './styles.css';
 
 function App() {
+  const [y, setY] = useState(300)
+  const move = () => {
+    setY(y - 50);
+  }
   return (
     <div className="App">
       <h1>Move the Box!</h1>
 
-      {/* handle the click event on this button */}
-      <button>👆 Move Up 👆</button>
+      <button onClick={move}>👆 Move Up 👆</button>
 
-      {/* move this box using inline styles */}
-      <div className="box" style={{}} />
+      <div className="box" style={{transform: `translateY(${y}px)`}} />
 
       <ScotchInfoBar seriesNumber={6} />
     </div>
