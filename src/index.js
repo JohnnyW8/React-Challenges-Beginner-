@@ -5,6 +5,7 @@ import Location from "./LocationComponent";
 import UserForm from "./UserForm";
 import ScotchInfoBar from "./ScotchInfoBar";
 import "./styles.css";
+import { UserProvider  } from './UserContext';
 
 function App() {
   return (
@@ -14,21 +15,24 @@ function App() {
         component.
       </h2>
       <div className="container">
-        <UserForm />
+          <UserForm />
 
-        <h2 className="is-size-4">Display User Info Here 👇</h2>
-        <p>
-          These two children components will receive data. These could be nested
-          components.
-        </p>
-        <Name />
-        <Location />
+          <h2 className="is-size-4">Display User Info Here 👇</h2>
+          <p>
+            These two children components will receive data. These could be nested
+            components.
+          </p>
+          <Name />
+          <Location />
       </div>
       <ScotchInfoBar seriesNumber={9} />
     </div>
   );
 }
 
-// Wrap parent component with context provider
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <UserProvider>
+    <App />
+  </UserProvider>
+, rootElement);
